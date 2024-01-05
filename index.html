@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h1>oK</h1>
+      <div>
+        <label>Choose a footer color:
+          <input type="color" value="#ff4545">
+          <input type="number" value="" id='oK'>
+      <footer></footer>
+      </div>
+      <script type="text/javascript">
+        // document.querySelector(':root')
+        // window.getComputedStyle(':root');
+        let style=document.querySelector('head > link:nth-child(4)');
+        console.log(style);
+        var input = document.querySelector('input')
+      var footer = document.querySelector('body')
+      let ook=document.querySelector('#oK');
+      console.log(document.querySelector('#oK').value);
+
+      console.log(window.innerWidth);
+      document.querySelector('#oK').value=window.innerWidth;
+      input.addEventListener('change', ()=>{
+        footer.style.setProperty('--footer-color', input.value);
+        footer.style.setProperty('--widthDisplay',document.querySelector('#oK').value+'px');
+      });
+      window.addEventListener('DOMContentLoaded',()=>{
+        ook.style.setProperty('--widthDisplay',window.innerWidth);
+        footer.style.setProperty('--widthDisplay',window.innerWidth);
+        console.log(window.innerWidth);
+      });
+      </script>
+    </main>
+  </body>
+</html>
