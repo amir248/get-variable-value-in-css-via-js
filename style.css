@@ -1,15 +1,27 @@
 :root {
   /* :root is a clever way of saying "the outer-most element" */
 
-  --footer-color: #ff4545; /* the default */
+  --box-color: #ff4545; /* the default */
   --widthDisplay: 7px;
 }
 *{
   margin:0;
 }
-footer {
+/* footer {
+  position: absolute;
   width: var(--widthDisplay);
   height: 50px;
   margin-top: 20px;
-  background-color: var(--footer-color)
+  background-color: var(--box-color);
+} */
+/* #iN{
+  background-color: var(--footer-color);
+
+} */
+#widthSpan{
+  position: absolute;
+  width: var(--widthDisplay);
+  height: 50px;
+  margin-top: 20px;
+  background-color: var(--box-color)
 }

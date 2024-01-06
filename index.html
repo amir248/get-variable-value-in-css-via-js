@@ -10,30 +10,42 @@
       <h1>oK</h1>
       <div>
         <label>Choose a footer color:
-          <input type="color" value="#ff4545">
+          <input type="color" value="#ff4545" id='iN'>
           <input type="number" value="" id='oK'>
-      <footer></footer>
+          <div style="width:1000px">
+            <span id="widthSpan"></span>
+
+          </div>
       </div>
       <script type="text/javascript">
-        // document.querySelector(':root')
-        // window.getComputedStyle(':root');
-        let style=document.querySelector('head > link:nth-child(4)');
-        console.log(style);
-        var input = document.querySelector('input')
-      var footer = document.querySelector('body')
-      let ook=document.querySelector('#oK');
-      console.log(document.querySelector('#oK').value);
+      console.log(document.styleSheets[0]);// all style
 
-      console.log(window.innerWidth);
-      document.querySelector('#oK').value=window.innerWidth;
+        let style=document.querySelector('head > link');
+        console.log(style);
+        // var input = document.querySelector('input')[0];
+        let input=document.querySelector('#iN');
+        let input2=document.querySelector('#oK');
+
+      let ook=document.querySelector('#widthSpan');
+        console.log(document.querySelector('#iN').value);
+
+        console.log(window.innerWidth);
+      function changeInput(){
+        document.querySelector('#widthSpan').style.setProperty('--box-color', document.querySelector('#iN').value);
+
+        document.querySelector('#widthSpan').style.setProperty('--widthDisplay',document.querySelector('#oK').value+'px');
+      }
+      // changeInput();
       input.addEventListener('change', ()=>{
-        footer.style.setProperty('--footer-color', input.value);
-        footer.style.setProperty('--widthDisplay',document.querySelector('#oK').value+'px');
+        changeInput();
+      });
+      input2.addEventListener('change',()=>{
+        changeInput();
       });
       window.addEventListener('DOMContentLoaded',()=>{
-        ook.style.setProperty('--widthDisplay',window.innerWidth);
-        footer.style.setProperty('--widthDisplay',window.innerWidth);
-        console.log(window.innerWidth);
+        document.querySelector('#oK').value=`${window.innerWidth}`;
+        changeInput();
+
       });
       </script>
     </main>
