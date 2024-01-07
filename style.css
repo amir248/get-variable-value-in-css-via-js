@@ -3,6 +3,7 @@
 
   --box-color: #ff4545; /* the default */
   --widthDisplay: 7px;
+  --theme-color: #337733;
 }
 *{
   margin:0;
@@ -24,4 +25,8 @@
   height: 50px;
   margin-top: 20px;
   background-color: var(--box-color)
+}
+h1{
+  background: var(--theme-color);
+  
 }

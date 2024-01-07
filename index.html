@@ -9,6 +9,7 @@
     <main>
       <h1>oK</h1>
       <div>
+
         <label>Choose a footer color:
           <input type="color" value="#ff4545" id='iN'>
           <input type="number" value="" id='oK'>
@@ -21,7 +22,26 @@
       console.log(document.styleSheets[0]);// all style
 
         let style=document.querySelector('head > link');
+        function oLo(){
+          const stylel = new CSSStyleSheet();
+          stylel.insertRule(`:root{
+            --theme-color: #777777;
+          }`);
+          document.adoptedStyleSheets = [stylel];
+          console.log(stylel);
+        }//oLo
         console.log(style);
+        function addStyle() {
+          const sheet = new CSSStyleSheet();
+          sheet.insertRule(`main > h1 {
+            background: var(--theme-color);
+            text-transform: uppercase;
+
+          }`);
+          document.adoptedStyleSheets = [sheet];
+        }
+        oLo();
+        addStyle();
         // var input = document.querySelector('input')[0];
         let input=document.querySelector('#iN');
         let input2=document.querySelector('#oK');
